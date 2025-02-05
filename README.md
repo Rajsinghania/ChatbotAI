@@ -5,9 +5,13 @@ This is a simple AI-powered chatbot built using Flask, SentenceTransformers, FAI
 
 # Features
 Natural Language Understanding: The chatbot uses the all-MiniLM-L6-v2 model from SentenceTransformers to understand user queries.
+
 Fast Search: Powered by the FAISS library, it quickly retrieves the most relevant answers from a database of pre-embedded responses.
+
 Interactive Web Interface: Users can interact with the chatbot through a simple HTML and JavaScript-based UI.
+
 API Integration: Supports REST API calls for easy integration with other platforms.
+
 Scalable Backend: Built with Flask, making it lightweight and easy to deploy.
 
 # Technologies Used
