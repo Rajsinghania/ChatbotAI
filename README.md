@@ -16,13 +16,20 @@ Scalable Backend: Built with Flask, making it lightweight and easy to deploy.
 
 # Technologies Used
 Backend: Flask (Python)
+
 Embeddings: SentenceTransformers (all-MiniLM-L6-v2)
+
 Search Engine: FAISS (Facebook AI Similarity Search)
+
 Frontend: HTML, CSS, JavaScript
+
 Testing: Postman
 
 # How It Works
 The user inputs a question through the web interface.
+
 The backend converts the question into an embedding vector using the SentenceTransformer model.
+
 FAISS retrieves the closest matching answers from the pre-indexed dataset.
+
 The chatbot responds with the most relevant answer.
