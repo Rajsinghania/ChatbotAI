@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Graphy Support Chat</title>
+    <style>
+        #chatbox { border: 1px solid #ccc; padding: 10px; height: 400px; overflow-y: scroll; }
+        .user { color: blue; }
+        .bot { color: green; }
+    </style>
+</head>
+<body>
+    <div id="chatbox"></div>
+    <input type="text" id="user-input" placeholder="Ask a question..." style="width: 300px;">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        async function sendMessage() {
+            const userInput = document.getElementById("user-input").value;
+            const chatbox = document.getElementById("chatbox");
+            
+            // Display user message
+            chatbox.innerHTML += `<p class="user">You: ${userInput}</p>`;
+            
+            // Fetch bot response
+            const response = await fetch("http://localhost:5000/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: userInput })
+            });
+            const data = await response.json();
+            
+            // Display bot response
+            chatbox.innerHTML += `<p class="bot">Bot: ${data.response}</p>`;
+            
+            // Clear input
+            document.getElementById("user-input").value = "";
+        }
+    </script>
+</body>
+</html>
